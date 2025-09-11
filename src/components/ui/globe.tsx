@@ -6,8 +6,8 @@ import { useCallback, useEffect, useRef, useState } from "react"
 import { cn } from "@/lib/utils"
 
 const GLOBE_CONFIG: COBEOptions = {
-  width: 1600,
-  height: 1600,
+  width: 2000,
+  height: 2000,
   onRender: () => {},
   devicePixelRatio: 2,
   phi: 0,
@@ -40,13 +40,12 @@ export function Globe({
   className?: string
   config?: COBEOptions
 }) {
-  const phiRef = useRef(0)
-  const widthRef = useRef(0)
+  let phi = 0
+  let width = 0
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const pointerInteracting = useRef<number | null>(null)
   const pointerInteractionMovement = useRef(0)
   const [r, setR] = useState(0)
-  const [isLoaded, setIsLoaded] = useState(false)
 
   const updatePointerInteraction = (value: number | null) => {
     pointerInteracting.current = value
@@ -65,19 +64,19 @@ export function Globe({
 
   const onRender = useCallback(
     (state: Record<string, number>) => {
-      if (!pointerInteracting.current) phiRef.current += 0.005
-      state.phi = phiRef.current + r
-      state.width = widthRef.current * 2
-      state.height = widthRef.current * 2
+      if (!pointerInteracting.current) phi += 0.005
+      state.phi = phi + r
+      state.width = width * 2
+      state.height = width * 2
     },
     [r],
   )
 
-  const onResize = useCallback(() => {
+  const onResize = () => {
     if (canvasRef.current) {
-      widthRef.current = canvasRef.current.offsetWidth
+      width = canvasRef.current.offsetWidth
     }
-  }, [])
+  }
 
   useEffect(() => {
     window.addEventListener("resize", onResize)
@@ -85,25 +84,25 @@ export function Globe({
 
     const globe = createGlobe(canvasRef.current!, {
       ...config,
-      width: widthRef.current * 2,
-      height: widthRef.current * 2,
+      width: width * 2,
+      height: width * 2,
       onRender,
     })
-    setIsLoaded(true)
+
+    setTimeout(() => (canvasRef.current!.style.opacity = "1"))
     return () => globe.destroy()
-  }, [config, onRender, onResize])
+  }, [])
 
   return (
     <div
       className={cn(
-        "absolute inset-0 mx-auto aspect-[1/1] w-full max-w-[1000px]",
+        "absolute inset-0 mx-auto aspect-[1/1] w-full max-w-[1200px]",
         className,
       )}
     >
       <canvas
         className={cn(
-          "size-full transition-opacity duration-500 [contain:layout_paint_size]",
-          isLoaded ? "opacity-100" : "opacity-0"
+          "size-full opacity-0 transition-opacity duration-500 [contain:layout_paint_size]",
         )}
         ref={canvasRef}
         onPointerDown={(e) =>
