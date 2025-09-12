@@ -26,23 +26,11 @@ export default function Home() {
             <p className="text-xl text-gray-600">Stay connected with Expi</p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="text-center p-8 bg-white rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow duration-300">
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">Email</h3>
+          <div className="flex justify-center">
+            <div className="text-center p-12 bg-white rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow duration-300 max-w-md w-full">
+              <h3 className="text-2xl font-semibold text-gray-900 mb-6">Email</h3>
               <p className="text-gray-600 text-lg">hello@expi.travel</p>
               <p className="text-gray-500 text-sm mt-2">info@expi.travel</p>
-            </div>
-            
-            <div className="text-center p-8 bg-white rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow duration-300">
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">Social Media</h3>
-              <p className="text-gray-600 text-lg">@expi.travel</p>
-              <p className="text-gray-500 text-sm mt-2">Follow us for updates</p>
-            </div>
-            
-            <div className="text-center p-8 bg-white rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow duration-300">
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">Newsletter</h3>
-              <p className="text-gray-600 text-lg">Stay updated</p>
-              <p className="text-gray-500 text-sm mt-2">Get the latest news</p>
             </div>
           </div>
         </div>
