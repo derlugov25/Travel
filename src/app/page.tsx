@@ -13,7 +13,7 @@ export default function Home() {
           <h2 className="text-4xl font-bold text-gray-900 mb-8">Launching Soon</h2>
           <p className="text-xl text-gray-600 mb-8">Get ready for the future of AI-powered travel experiences</p>
           <button className="bg-gray-600 hover:bg-gray-700 text-white font-bold py-4 px-10 rounded-full transition-all duration-300 text-lg shadow-lg hover:shadow-xl transform hover:scale-105">
-            Get Notified
+            Try Beta
           </button>
         </div>
       </div>
