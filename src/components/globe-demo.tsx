@@ -7,7 +7,7 @@ export function GlobeDemo() {
         <span className="pointer-events-none whitespace-pre-wrap bg-gradient-to-b from-black to-gray-300/80 bg-clip-text text-center text-[10rem] font-semibold leading-none text-transparent dark:from-white dark:to-slate-900/10">
           Expi
         </span>
-        <span className="pointer-events-none whitespace-pre-wrap bg-gradient-to-b from-gray-600 to-gray-400 bg-clip-text text-center text-2xl font-medium leading-relaxed text-transparent mt-2">
+        <span className="pointer-events-none whitespace-pre-wrap bg-gradient-to-b from-gray-600 to-gray-400 bg-clip-text text-center text-2xl font-medium leading-relaxed text-transparent mt-1">
           AI-Powered Travel Experiences
         </span>
       </div>
