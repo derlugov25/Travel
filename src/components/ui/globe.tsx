@@ -52,7 +52,6 @@ export function Globe({
       state.width = widthRef.current * 2
       state.height = widthRef.current * 2
     },
-    ,
   )
 
   const onResize = useCallback(() => {
@@ -85,9 +84,17 @@ export function Globe({
     >
       <canvas
         className={cn(
-          "size-full opacity-0 transition-opacity duration-500 [contain:layout_paint_size] cursor-default pointer-events-none",
+          "size-full opacity-0 transition-opacity duration-500 [contain:layout_paint_size] cursor-default pointer-events-none select-none",
         )}
         ref={canvasRef}
+        onTouchStart={(e) => e.preventDefault()}
+        onTouchMove={(e) => e.preventDefault()}
+        onTouchEnd={(e) => e.preventDefault()}
+        onMouseDown={(e) => e.preventDefault()}
+        onMouseMove={(e) => e.preventDefault()}
+        onMouseUp={(e) => e.preventDefault()}
+        onContextMenu={(e) => e.preventDefault()}
+        style={{ touchAction: "none", userSelect: "none" }}
       />
     </div>
   )
