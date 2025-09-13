@@ -1,7 +1,7 @@
 "use client"
 
 import createGlobe, { COBEOptions } from "cobe"
-import { useCallback, useEffect, useRef, useState } from "react"
+import { useCallback, useEffect, useRef } from "react"
 
 import { cn } from "@/lib/utils"
 
@@ -51,7 +51,7 @@ export function Globe({
       state.phi = phiRef.current
       state.width = widthRef.current * 2
       state.height = widthRef.current * 2
-    },
+    }, []
   )
 
   const onResize = useCallback(() => {
