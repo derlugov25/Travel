@@ -1,6 +1,6 @@
 import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button"
 import { GlobeDemo } from "@/components/globe-demo"
-import { Mail, Clock, MessageCircle } from "lucide-react"
+import { Mail, Clock } from "lucide-react"
 
 export default function Home() {
   return (
@@ -49,7 +49,7 @@ export default function Home() {
               <div className="mt-8 pt-6 border-t border-gray-200">
                 <div className="flex items-center justify-center space-x-2 text-gray-500">
                   <Clock className="w-4 h-4" />
-                  <p className="text-sm">We'll get back to you within 24 hours</p>
+                  <p className="text-sm">We will get back to you within 24 hours</p>
                 </div>
               </div>
             </div>
