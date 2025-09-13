@@ -43,16 +43,16 @@ export function Globe({
   const phiRef = useRef(0)
   const widthRef = useRef(0)
   const canvasRef = useRef<HTMLCanvasElement>(null)
-  const [isPaused, setIsPaused] = useState(false)
+  
 
   const onRender = useCallback(
     (state: Record<string, number>) => {
-      if (!isPaused) phiRef.current += 0.005
+      phiRef.current += 0.005
       state.phi = phiRef.current
       state.width = widthRef.current * 2
       state.height = widthRef.current * 2
     },
-    [isPaused],
+    ,
   )
 
   const onResize = useCallback(() => {
@@ -85,15 +85,9 @@ export function Globe({
     >
       <canvas
         className={cn(
-          "size-full opacity-0 transition-opacity duration-500 [contain:layout_paint_size] cursor-pointer",
+          "size-full opacity-0 transition-opacity duration-500 [contain:layout_paint_size] cursor-default pointer-events-none",
         )}
         ref={canvasRef}
-        onMouseDown={() => setIsPaused(true)}
-        onMouseUp={() => setIsPaused(false)}
-        onMouseLeave={() => setIsPaused(false)}
-        onTouchStart={() => setIsPaused(true)}
-        onTouchEnd={() => setIsPaused(false)}
-        title="Hold to pause rotation"
       />
     </div>
   )
