@@ -1,6 +1,6 @@
 import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button"
 import { GlobeDemo } from "@/components/globe-demo"
-import { Mail, Clock } from "lucide-react"
+import { Mail } from "lucide-react"
 
 export default function Home() {
   return (
@@ -18,41 +18,58 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Contact Section */}
-      <div className="bg-gray-50 py-20 px-4 relative overflow-hidden">
+      {/* Footer Section */}
+      <div className="bg-gray-50 py-16 px-4">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Contact Us</h2>
-            <p className="text-xl text-gray-600">Stay connected with Expi</p>
-          </div>
-          
-          <div className="flex justify-center">
-            <div className="text-center p-12 bg-white rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 max-w-md w-full">
-              <div className="inline-flex items-center justify-center w-16 h-16 bg-gray-100 rounded-2xl mb-8">
-                <Mail className="w-8 h-8 text-gray-600" />
-              </div>
-              
-              <h3 className="text-2xl font-semibold text-gray-900 mb-8">Email</h3>
-              
-              <div className="space-y-6">
-                <div>
-                  <p className="text-lg font-medium text-gray-900 mb-1">hello@expi.travel</p>
-                  <p className="text-sm text-gray-500">General inquiries</p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-8">
+            {/* Left Column - About Expi */}
+            <div className="space-y-4 text-center">
+              <h3 className="text-lg font-semibold text-gray-900 mb-4">About Expi</h3>
+              <p className="text-gray-600 leading-relaxed">
+                Your gateway to AI-powered travel experiences: personalized recommendations, 
+                smart itinerary planning, and seamless booking—transforming how you discover 
+                and explore the world.
+              </p>
+            </div>
+
+            {/* Right Column - Contact */}
+            <div className="space-y-6 text-center">
+              <h3 className="text-lg font-semibold text-gray-900 mb-4">Contact</h3>
+              <div className="space-y-4">
+                <div className="space-y-3">
+                  <div className="flex items-center justify-center space-x-3">
+                    <Mail className="w-4 h-4 text-blue-600" />
+                    <a 
+                      href="mailto:hello@expi.travel" 
+                      className="text-blue-600 hover:text-blue-700 transition-colors"
+                    >
+                      hello@expi.travel
+                    </a>
+                  </div>
+                  <div className="flex items-center justify-center space-x-3">
+                    <Mail className="w-4 h-4 text-blue-600" />
+                    <a 
+                      href="mailto:info@expi.travel" 
+                      className="text-blue-700 transition-colors"
+                    >
+                      info@expi.travel
+                    </a>
+                  </div>
                 </div>
-                
-                <div>
-                  <p className="text-lg font-medium text-gray-900 mb-1">info@expi.travel</p>
-                  <p className="text-sm text-gray-500">Business information</p>
-                </div>
-              </div>
-              
-              <div className="mt-8 pt-6 border-t border-gray-200">
-                <div className="flex items-center justify-center space-x-2 text-gray-500">
-                  <Clock className="w-4 h-4" />
-                  <p className="text-sm">We will get back to you within 24 hours</p>
+                <div className="pt-2">
+                  <p className="text-gray-600 text-sm">
+                    Ready to explore the world?
+                  </p>
                 </div>
               </div>
             </div>
+          </div>
+
+          {/* Divider */}
+          <div className="border-t border-gray-200 pt-8">
+            <p className="text-center text-gray-500 text-sm">
+              © 2025 Expi — AI-Powered Travel Platform. All rights reserved.
+            </p>
           </div>
         </div>
       </div>
